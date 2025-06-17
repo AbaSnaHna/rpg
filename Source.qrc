@@ -12,5 +12,6 @@
         <file>weapons/knife.png</file>
         <file>Chara/menu.png</file>
         <file>weapons/wings.png</file>
+        <file>weapons/potion.png</file>
     </qresource>
 </RCC>

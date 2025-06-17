@@ -7,7 +7,7 @@ Item {
     anchors.fill: parent
     focus: true
 
-    signal exitrequrested()
+    signal exitRequested()
     // 地图背景
     Image {
         id: map
@@ -84,13 +84,13 @@ Item {
                playerBottom > areaTop &&
                playerTop < areaBottom) {
                 mainWindow.changeScene(area.targetScene, area.playerSpawn)
+                exitRequested()
                 break
             }
         }
     }
 
     // 场景切换函数
-
 
     MediaPlayer{
         id:backgroudPlayer

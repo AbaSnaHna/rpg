@@ -8,6 +8,8 @@ Item {
     anchors.centerIn: parent
 
     property int selectedItem: -1
+
+    property var playerData: PlayerData
     // 背景
     Image {
         id:map
@@ -34,8 +36,10 @@ Item {
     Button {
         text: "离开商店"
         anchors { bottom: parent.bottom; right: parent.right; margins: 100 }
-        onClicked: mainWindow.changeScene("TownScreen.qml", {x: 1053, y: 600})
-
+        onClicked: {
+            mainWindow.changeScene("TownScreen.qml", {x: 1053, y: 600})
+            exitRequested()
+}
         background: Rectangle {
             color: "#8B4513"
             radius: 5
@@ -131,6 +135,17 @@ Item {
             stock:20
             type:"buff"
         }
+
+        ListElement{
+            itemId:"potion"
+            icon:"qrc:/weapons/potion.png"
+            name:"生命药水"
+            cost:50
+            stock:100
+            type:"buff"
+            buffType:"healing"
+            value:2
+        }
     }
 
     Rectangle{
@@ -185,7 +200,7 @@ Item {
                     onClicked: {
                         selectedItem = index
                         var item = goods.get(index)
-                            buyButton.enabled = (player.money >= item.cost && item.stock > 0)
+                            buyButton.enabled = (playerData.money >= item.cost && item.stock > 0)
                     }
                 }
             }
@@ -201,7 +216,7 @@ Item {
                 margins: 20
             }
             enabled: false
-            onClicked: shopWindow.buyItem(selectedItem, player)
+            onClicked: shopWindow.buyItem(selectedItem, playerData)
         }
 
         Button{
@@ -242,35 +257,35 @@ Item {
             reminderTimer.start()
         }
 
-        function buyItem(itemIndex, player){
+        function buyItem(itemIndex, playerData){
             var item = goods.get(itemIndex)
 
             if(item.stock <= 0){
                 console.log("商品售罄")
                 return false
             }
-            if(player.money < item.cost){
+            if(playerData.money < item.cost){
                 showReminder();
                 console.log("金币不足")
                 return false
             }
 
-            player.money -= item.cost
+            playerData.money -= item.cost
             goods.setProperty(itemIndex, "stock", item.stock - 1)
 
-            addToPlayerBag(player, item)
+            addToPlayerBag(playerData, item)
             return true
         }
 
-        function addToPlayerBag(player, item){
-            for (var i = 0; i < player.bag.count; i++) {
-                if (player.bag.get(i).itemId === item.itemId) {
-                    player.bag.setProperty(i, "count", player.bag.get(i).count + 1)
+        function addToPlayerBag(playerData, item){
+            for (var i = 0; i < playerData.bag.count; i++) {
+                if (playerData.bag.get(i).itemId === item.itemId) {
+                    playerData.bag.setProperty(i, "count", playerData.bag.get(i).count + 1)
                     return
                 }
             }
 
-            player.bag.append({
+            playerData.bag.append({
                                   itemId:item.itemId,
                                   name:item.name,
                                   icon:item.icon,

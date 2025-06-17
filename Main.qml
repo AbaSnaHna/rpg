@@ -11,9 +11,12 @@ Window {
     title: "Allinal"
     color: "#1a1a1a"
 
+
+
     Component{
         id:townScreenComonpent
         TownScreen{
+
         }
     }
 
@@ -29,7 +32,7 @@ Window {
     Loader {
         id: sceneLoader
         anchors.fill: parent
-        sourceComponent: townScreenComonpent
+        source: "TownScreen.qml"
     }
 
     Rectangle {
@@ -68,4 +71,12 @@ Window {
             }
         }
     }
+
+    Component.onCompleted: {
+        Qt.createQmlObject('import QtQuick 2.0; PlayerData {}',
+                          applicationWindow,
+                          "PlayerDataSingleton")
+    }
+
+
 }

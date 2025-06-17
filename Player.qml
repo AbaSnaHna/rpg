@@ -9,33 +9,14 @@ Item {
     y: 755
     focus: true
 
+    property var playerData: PlayerData
+
     property string direction: "down"
     property bool moving: false
     property int baseSpeed: 4
     property real currentSpeed: baseSpeed
+
     property var activeBuffs: ({})
-
-    //角色属性
-    property real maxHealth: 100
-    property real health: maxHealth
-    property real maxMana: 500
-    property int money:1000
-
-    property int defense: 10
-
-    property ListModel bag: ListModel{
-        ListElement{icon:"qrc:/weapons/knife.png"; name:"匕首";count:1}
-        ListElement{
-            itemId:"wings"
-            icon:"qrc:/weapons/wings.png";
-            name: "伊卡洛斯的羽翼";
-            count:2;
-            type:"buff"
-            buffType:"speed"
-            value:2
-            duration:10000
-        }
-    }
 
     AnimatedSprite {
         id: playerSprite
@@ -128,7 +109,7 @@ Item {
             color: "#442222"
 
             Rectangle {
-                width: (parent.width * player.health / player.maxHealth)
+                width: (parent.width * playerData.currentHealth / playerData.maxHealth)
                 height: parent.height
                 radius: parent.radius
                 color: "#FF5555"
@@ -140,10 +121,10 @@ Item {
             Text {
                 id: healthText
                 anchors.centerIn: parent
-                text:`${player.health}/${player.maxHealth}`
+                text:`${playerData.currentHealth}/${playerData.maxHealth}`
                 color: {
-                    if(player.health < player.maxHealth * 0.3) "red"
-                    else if(player.health < player.maxHealth * 0.6) "orange"
+                    if(playerData.currentHealth < playerData.maxHealth * 0.3) "red"
+                    else if(playerData.currentHealth < playerData.maxHealth * 0.6) "orange"
                     else "white"
                 }
                 font.pixelSize: 10
@@ -155,8 +136,8 @@ Item {
         }
 
         Text{
-            id:palyerMoney
-            text:player.money
+            id:playerMoney
+            text:playerData.money
             x:320
             y:82
             color: "gold"
@@ -188,7 +169,7 @@ Item {
             topMargin: 170
             leftMargin: 30
 
-            model: player.bag
+            model: playerData.bag
             delegate: Item{
 
                 anchors.margins: 20
@@ -228,22 +209,84 @@ Item {
         }
     }
 
+    Text {
+        id: boostText
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        y: 50
+        color: "white"
+        font.pixelSize: 16
+        font.bold: true
+        visible: false
+        text: "攻击力增加！"
+    }
+
+    Text {
+        id: accelerateText
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        y: 50
+        color: "white"
+        font.pixelSize: 16
+        font.bold: true
+        visible: false
+        text: "速度提升！"
+    }
+
+    Text{
+        id:healingText
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        y: 50
+        color: "white"
+        font.pixelSize: 16
+        font.bold: true
+        visible: false
+        text: "生命恢复！"
+    }
+
     function useItem(index){
-        var item = bag.get(index)
+        var item = playerData.bag.get(index)
         if(item.type === "buff" && item.buffType === "speed"){
             activeBuffs["wings"] = {
                 value: item.value,
                 expiry: new Date().getTime() + item.duration
             };
-            accelerate();
-
-            wingsTimer.start();
+            accelerateText.visible = true
+            accelerate()
+            accelerateTimer.start()
+            wingsTimer.start()
             }
 
-        if(bag.get(index).count >0){
-            bag.setProperty(index, "count", bag.get(index).count - 1)
-            if(bag.get(index).count <=0){
-                bag.remove(index)
+        if(item.type === "buff" && item.buffType === "attack"){
+            activeBuffs["knife"]= {
+                value:item.value
+            };
+            boostText.visible = true
+            boostTimer.start()
+            boost()
+        }
+
+        if(item.type === "buff" && item.buffType === "healing"){
+            if (playerData.health == playerData.maxHealth) {
+                        healText.visible = true
+                        healText.text = "血量已满，无法使用药水！"
+                        healText.color = "red"
+                        healTimer.start()
+                        return;
+            }
+            activeBuffs["potion"] = {
+                value:item.value
+            };
+            healingText.visible = true
+            healingTimer.start()
+            healing()
+        }
+
+        if(playerData.bag.get(index).count >0){
+            playerData.bag.setProperty(index, "count", playerData.bag.get(index).count - 1)
+            if(playerData.bag.get(index).count <=0){
+                playerData.bag.remove(index)
             }
         }
     }
@@ -256,6 +299,27 @@ Item {
         currentSpeed = baseSpeed  * Magnification;
     }
 
+    function boost(){
+        var Magnification = 10
+        if(activeBuffs["knife"]){
+            Magnification = 20
+        }
+        playerData.currentAttack += Magnification
+
+    }
+
+    function healing(){
+        var Magnification = 10
+        if(activeBuffs["potion"]){
+            Magnification = 20
+        }
+        playerData.health += Magnification
+
+        if(playerData.health > playerData.maxHealth){
+            playerData.health = playerData.maxHealth
+        }
+}
+
     Timer{
         id:wingsTimer
         interval: 1000
@@ -267,6 +331,30 @@ Item {
                 accelerate();
                 stop();
             }
+        }
+    }
+
+    Timer{
+        id:accelerateTimer
+        interval: 1000
+        onTriggered: {
+            accelerateText.visible =false
+        }
+    }
+
+    Timer{
+        id:healingTimer
+        interval: 1000
+        onTriggered: {
+            healingText.visible = false
+        }
+    }
+
+    Timer{
+        id:boostTimer
+        interval: 1000
+        onTriggered: {
+            boostText.visible = false
         }
     }
 
@@ -308,7 +396,5 @@ Item {
                y <= bounds.height - height
 
     }
-
-    //区域检测
 
 }
