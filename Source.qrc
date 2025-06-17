@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>map/Map003.png</file>
+        <file>map/Map.png</file>
+        <file>map/town.png</file>
+        <file>sprites/player_spritesheet.png</file>
+        <file>map/Map004.png</file>
+        <file>BGM/The First Town.mp3</file>
+        <file>BGM/At Nightfall.mp3</file>
+        <file>Chara/NPC/org.png</file>
+        <file>Chara/NPC/orgirl1.png</file>
+        <file>weapons/knife.png</file>
+        <file>Chara/menu.png</file>
+        <file>weapons/wings.png</file>
+    </qresource>
+</RCC>
