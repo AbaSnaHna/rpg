@@ -1,0 +1,100 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 5,
+                        "durationMicroseconds": 123,
+                        "errorMessage": "Cannot access value for name mainWindow",
+                        "functionName": "savePlayerState",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 5,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Functions without type annotations won't be compiled",
+                        "functionName": "loadPlayerState",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 35,
+                        "durationMicroseconds": 322,
+                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
+                        "functionName": "transitionAreas",
+                        "line": 46
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 5,
+                        "durationMicroseconds": 113,
+                        "errorMessage": "Cannot load property length from (component in /root/RPGtown/TownScreen.qml)::transitionAreas with type QVariant.",
+                        "functionName": "checkAreaTransition",
+                        "line": 64
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 19,
+                        "durationMicroseconds": 55,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 7
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 16,
+                        "durationMicroseconds": 74,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 17,
+                        "durationMicroseconds": 78,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 16
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 22,
+                        "durationMicroseconds": 51,
+                        "errorMessage": "method checkAreaTransition cannot be resolved.",
+                        "functionName": "onTriggered",
+                        "line": 61
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 16,
+                        "durationMicroseconds": 54,
+                        "errorMessage": "",
+                        "functionName": "loops",
+                        "line": 99
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 28,
+                        "durationMicroseconds": 129,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "onCompleted",
+                        "line": 102
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 30,
+                        "durationMicroseconds": 85,
+                        "errorMessage": "",
+                        "functionName": "onDestruction",
+                        "line": 108
+                    }
+                ],
+                "filepath": "/root/RPGtown/TownScreen.qml"
+            }
+        ],
+        "moduleId": "RPGtown(appRPGtown)"
+    }
+]

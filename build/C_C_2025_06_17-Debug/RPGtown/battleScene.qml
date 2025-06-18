@@ -1,0 +1,257 @@
+import QtQuick
+import QtQuick.Controls
+
+Item {
+    id: battleMap
+    anchors.fill: parent
+    focus: true
+
+    property var playerData: PlayerData
+    property var monsterData: MonsterData
+
+    Image {
+        id: battleImage
+        source: "qrc:/map/battlemap.png"
+        anchors.centerIn: parent
+        width: sourceSize.width
+        height: sourceSize.height
+}
+
+    Player {
+        id: player
+        focus: true
+        x: 800
+        y: 10
+
+        Rectangle {
+            id:healthBar
+
+            z:1
+            width: 50
+            height: 8
+            radius: 4
+            color: "#442222"
+
+            Rectangle {
+                width: (parent.width * playerData.currentHealth / playerData.maxHealth)
+                height: parent.height
+                radius: parent.radius
+                color: "#FF5555"
+                Behavior on width {
+                    NumberAnimation { duration: 300 }
+                }
+            }
+
+            Text {
+                id: healthText
+                anchors.centerIn: parent
+                text:`${playerData.currentHealth}/${playerData.maxHealth}`
+                color: {
+                    if(playerData.currentHealth < playerData.maxHealth * 0.3) "red"
+                    else if(playerData.currentHealth < playerData.maxHealth * 0.6) "orange"
+                    else "white"
+                }
+                font.pixelSize: 10
+
+                Behavior on text {
+                    NumberAnimation{ duration:300}
+                }
+            }
+        }
+    }
+
+    Monsters {
+        id:monster
+        player:player
+        x: Math.random() * (parent.width - width)
+        y: Math.random() * (parent.height - height)
+        Rectangle {
+            id:monsterHealthBar
+            z:1
+            width: 50
+            height: 8
+            radius: 4
+            color: "#442222"
+
+            Rectangle {
+                width: (parent.width * monsterData.currentHealth / monsterData.maxHealth)
+                height: parent.height
+                radius: parent.radius
+                color: "#FF5555"
+                Behavior on width {
+                    NumberAnimation { duration: 300 }
+                }
+            }
+
+            Text {
+                id: monsterHealthText
+                anchors.centerIn: parent
+                text:`${monsterData.currentHealth}/${monsterData.maxHealth}`
+                color: {
+                    if(monsterData.currentHealth < monsterData.maxHealth * 0.3) "red"
+                    else if(monsterData.currentHealth < monsterData.maxHealth * 0.6) "orange"
+                    else "white"
+                }
+                font.pixelSize: 10
+
+                Behavior on text {
+                    NumberAnimation{ duration:300}
+                }
+            }
+        }
+
+    }
+
+    function moveTowardPlayer() {
+        if (player && monster) {
+            // 计算玩家中心点
+            var playerCenterX = player.x + player.width / 2
+            var playerCenterY = player.y + player.height / 2
+
+            // 计算怪物中心点
+            var monsterCenterX = monster.x + monster.width / 2
+            var monsterCenterY = monster.y + monster.height / 2
+
+            // 计算方向向量
+            var dx = playerCenterX - monsterCenterX
+            var dy = playerCenterY - monsterCenterY
+            var distance = Math.sqrt(dx * dx + dy * dy)
+
+            if (distance > 0) {
+                var stepX = dx / distance * monster.speed
+                var stepY = dy / distance * monster.speed
+
+                monster.x += stepX
+                monster.y += stepY
+
+                if (Math.abs(dx) > Math.abs(dy)) {
+                    monster.direction = dx > 0 ? "right" : "left"
+                } else {
+                    monster.direction = dy > 0 ? "down" : "up"
+                }
+
+                monster.moving = true
+            } else {
+                monster.moving = false
+            }
+        }
+    }
+
+    Timer{
+        interval: 16
+        running: true
+        repeat: true
+        onTriggered: moveTowardPlayer()
+    }
+
+    property var transitionAreas: [
+        {
+            id: "townScene",
+            x: 200,  y: 500,
+            width: 100, height: 100,
+            targetScene: "TownScreen.qml",
+            playerSpawn: { x: 850, y: 970 }
+        }
+    ]
+
+    // 区域检测定时器
+    Timer {
+        interval: 100
+        running: true
+        repeat: true
+        onTriggered: checkAreaTransition()
+    }
+
+    function checkAreaTransition() {
+        if(!player.moving) return
+
+        // 获取玩家矩形区域
+        var playerLeft = player.x
+        var playerRight = player.x + player.width
+        var playerTop = player.y
+        var playerBottom = player.y + player.height
+
+        for(var i = 0; i < transitionAreas.length; i++) {
+            var area = transitionAreas[i]
+
+            var areaLeft = area.x
+            var areaRight = areaLeft + area.width
+            var areaTop = area.y
+            var areaBottom = areaTop + area.height
+
+            if(playerRight > areaLeft &&
+               playerLeft < areaRight &&
+               playerBottom > areaTop &&
+               playerTop < areaBottom) {
+                mainWindow.changeScene(area.targetScene, area.playerSpawn)
+                break
+            }
+        }
+    }
+
+
+    function monsterDamage(){
+
+        var playerLeft = player.x - playerData.currentAttackDistance
+        var playerRight = player.x + player.width + playerData.currentAttackDistance
+        var playerTop = player.y
+        var playerBottom = player.y +  player.height
+
+        var monsterLeft = monster.x
+        var monsterRight = monster.x + monster.width
+        var monsterTop = monster.y
+        var monsterBottom = monster.y + monster.height
+
+        if(playerRight > monsterLeft &&
+                playerLeft < monsterRight &&
+                playerBottom > monsterTop &&
+                playerTop < monsterBottom){
+
+            if(!monster.isInvincible){
+                monsterData.currentHealth -= playerData.currentAttack
+                monster.isInvincible = true
+                monsterInvincibleTimer.start()
+            }
+
+            if(!player.isInvincible &&
+                    player.x < monster.x + monster.width &&
+                    player.x + player.width > monster.x &&
+                    player.y < monster.y + monster.height &&
+                    player.y + player.height > monster.y){
+
+               playerData.currentHealth -= monsterData.baseAttack
+               player.isInvincible = true
+               playerInvincibleTimer.start()
+           }
+        }
+    }
+
+    Timer{
+        interval: 100
+        running: true
+        repeat: true
+        onTriggered: {
+            monsterDamage()
+        }
+    }
+
+    Timer{
+        id:playerInvincibleTimer
+        interval: 1000
+        onTriggered: {
+            player.isInvincible = false
+        }
+    }
+
+    Timer{
+        id:monsterInvincibleTimer
+        interval: 500
+        onTriggered: {
+            monster.isInvincible = false
+        }
+    }
+
+    Component.onCompleted: {
+        player.forceActiveFocus()
+    }
+}

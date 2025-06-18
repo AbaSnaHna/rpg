@@ -1,0 +1,13 @@
+module RPGtown
+typeinfo appRPGtown.qmltypes
+prefer :/qt/qml/RPGtown/
+Main 1.0 Main.qml
+TownScreen 1.0 TownScreen.qml
+WeaponShop 1.0 WeaponShop.qml
+Player 1.0 Player.qml
+PlayerData 1.0 PlayerData.qml
+Monsters 1.0 Monsters.qml
+MonsterData 1.0 MonsterData.qml
+
+singleton PlayerData 1.0 PlayerData.qml
+singleton MonsterData 1.0 MonsterData.qml

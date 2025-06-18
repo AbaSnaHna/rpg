@@ -1,0 +1,28 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 31,
+                        "durationMicroseconds": 188,
+                        "errorMessage": "",
+                        "functionName": "activeBuffs",
+                        "line": 7
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 27,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "health",
+                        "line": 11
+                    }
+                ],
+                "filepath": "D:/qt creator/RPGtown/PlayerData.qml"
+            }
+        ],
+        "moduleId": "RPGtown(appRPGtown)"
+    }
+]

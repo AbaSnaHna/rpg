@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_appRPGtown_FILE /root/RPGtown/build/C_C_2025_06_17-Debug/appRPGtown)
+set(__QT_DEPLOY_TARGET_appRPGtown_TYPE EXECUTABLE)

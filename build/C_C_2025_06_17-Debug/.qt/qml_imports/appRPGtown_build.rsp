@@ -1,0 +1,14 @@
+-rootPath
+/root/RPGtown
+-cmake-output
+-output-file
+/root/RPGtown/build/C_C_2025_06_17-Debug/.qt/qml_imports/appRPGtown_build.cmake
+-importPath
+/root/RPGtown/build/C_C_2025_06_17-Debug/RPGtown
+-importPath
+/root/RPGtown/build/C_C_2025_06_17-Debug
+-importPath
+/usr/lib/qt6/qml
+-qrcFiles
+/root/RPGtown/build/C_C_2025_06_17-Debug/.qt/rcc/qmake_RPGtown.qrc
+/root/RPGtown/build/C_C_2025_06_17-Debug/.qt/rcc/appRPGtown_raw_qml_0.qrc

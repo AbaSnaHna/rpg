@@ -1,0 +1,196 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-e9287cddecdf32ff522d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "RPGtown",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-9d7a1b5eb6dc4deaf2d8.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-c3883f574d4994088283.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-75684698b6609ac1f941.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-5a9604ad369e4359dd95.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-86afe090aafc52a83f4f.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appRPGtown::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appRPGtown-Debug-c54cc0017566da932043.json",
+					"name" : "appRPGtown",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appRPGtown_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appRPGtown_autogen-Debug-ffb7f1240432103011e0.json",
+					"name" : "appRPGtown_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appRPGtown_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appRPGtown_autogen_timestamp_deps-Debug-f1b9361b0897108a5e96.json",
+					"name" : "appRPGtown_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appRPGtown_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appRPGtown_copy_qml-Debug-87bee4b3c838f1527da9.json",
+					"name" : "appRPGtown_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appRPGtown_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appRPGtown_copy_res-Debug-cf28eb51e64ebc84538a.json",
+					"name" : "appRPGtown_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appRPGtown_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appRPGtown_qmlimportscan-Debug-7e2816db84b16a15ec79.json",
+					"name" : "appRPGtown_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appRPGtown_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appRPGtown_qmllint-Debug-d805b73e665d330ec146.json",
+					"name" : "appRPGtown_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appRPGtown_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appRPGtown_qmllint_json-Debug-e2bfe48536df97dfe9c4.json",
+					"name" : "appRPGtown_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appRPGtown_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appRPGtown_qmllint_module-Debug-3e0bc5c27d2c2890c239.json",
+					"name" : "appRPGtown_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appRPGtown_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appRPGtown_qmltyperegistration-Debug-992c0ba665a33ba9d646.json",
+					"name" : "appRPGtown_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_appRPGtown_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_appRPGtown_aotstats_target-Debug-a5b4672f5a418563899a.json",
+					"name" : "module_appRPGtown_aotstats_target",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/root/RPGtown/build/C_C_2025_06_17-Debug",
+		"source" : "/root/RPGtown"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

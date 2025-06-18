@@ -1,0 +1,16 @@
+--bare
+-I
+D:/qt creator/RPGtown/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug
+-I
+D:/Qt/6.9.0/mingw_64/qml
+--resource
+D:/qt creator/RPGtown/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qt/rcc/qmake_RPGtown.qrc
+--resource
+D:/qt creator/RPGtown/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qt/rcc/appRPGtown_raw_qml_0.qrc
+D:/qt creator/RPGtown/Main.qml
+D:/qt creator/RPGtown/TownScreen.qml
+D:/qt creator/RPGtown/WeaponShop.qml
+D:/qt creator/RPGtown/Player.qml
+D:/qt creator/RPGtown/PlayerData.qml
+--json
+D:/qt creator/RPGtown/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/appRPGtown_qmllint.json

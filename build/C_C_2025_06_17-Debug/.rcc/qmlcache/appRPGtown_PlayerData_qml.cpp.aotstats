@@ -1,0 +1,36 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 34,
+                        "durationMicroseconds": 113,
+                        "errorMessage": "",
+                        "functionName": "currentHealth",
+                        "line": 11
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 32,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "currentAttack",
+                        "line": 18
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 41,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "currentAttackDistance",
+                        "line": 20
+                    }
+                ],
+                "filepath": "/root/RPGtown/PlayerData.qml"
+            }
+        ],
+        "moduleId": "RPGtown(appRPGtown)"
+    }
+]

@@ -23,6 +23,9 @@ qt_add_qml_module(appRPGtown
         QML_FILES WeaponShop.qml
         QML_FILES Player.qml
         QML_FILES PlayerData.qml
+        QML_FILES battleScene.qml
+        QML_FILES Monsters.qml
+        QML_FILES MonsterData.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
