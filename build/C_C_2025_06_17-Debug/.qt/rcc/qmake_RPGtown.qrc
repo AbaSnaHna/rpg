@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/RPGtown">
+    <file alias="qmldir">/root/RPGtown/build/C_C_2025_06_17-Debug/RPGtown/qmldir</file>
+  </qresource>
+</RCC>
+

@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="/qt/qml/RPGtown/">
+    <file alias="Main.qml">/root/RPGtown/Main.qml</file>
+    <file alias="TownScreen.qml">/root/RPGtown/TownScreen.qml</file>
+    <file alias="WeaponShop.qml">/root/RPGtown/WeaponShop.qml</file>
+    <file alias="Player.qml">/root/RPGtown/Player.qml</file>
+    <file alias="PlayerData.qml">/root/RPGtown/PlayerData.qml</file>
+    <file alias="battleScene.qml">/root/RPGtown/battleScene.qml</file>
+    <file alias="Source.qrc">/root/RPGtown/Source.qrc</file>
+  </qresource>
+</RCC>
+

@@ -1,0 +1,28 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 34,
+                        "durationMicroseconds": 117,
+                        "errorMessage": "",
+                        "functionName": "currentHealth",
+                        "line": 10
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 32,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "Cannot access value for name attack",
+                        "functionName": "currentAttack",
+                        "line": 16
+                    }
+                ],
+                "filepath": "/root/RPGtown/PlayerData.qml"
+            }
+        ],
+        "moduleId": "RPGtown(appRPGtown)"
+    }
+]

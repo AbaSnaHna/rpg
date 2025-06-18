@@ -1,0 +1,10 @@
+--resource
+/root/RPGtown/build/C_C_2025_06_17-Debug/.qt/rcc/qmake_RPGtown.qrc
+--resource
+/root/RPGtown/build/C_C_2025_06_17-Debug/.qt/rcc/appRPGtown_raw_qml_0.qrc
+/qt/qml/RPGtown/Main.qml
+/qt/qml/RPGtown/TownScreen.qml
+/qt/qml/RPGtown/WeaponShop.qml
+/qt/qml/RPGtown/Player.qml
+/qt/qml/RPGtown/PlayerData.qml
+/qt/qml/RPGtown/battleScene.qml

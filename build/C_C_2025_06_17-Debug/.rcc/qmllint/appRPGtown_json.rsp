@@ -1,0 +1,17 @@
+--bare
+-I
+/root/RPGtown/build/C_C_2025_06_17-Debug
+-I
+/usr/lib/qt6/qml
+--resource
+/root/RPGtown/build/C_C_2025_06_17-Debug/.qt/rcc/qmake_RPGtown.qrc
+--resource
+/root/RPGtown/build/C_C_2025_06_17-Debug/.qt/rcc/appRPGtown_raw_qml_0.qrc
+/root/RPGtown/Main.qml
+/root/RPGtown/TownScreen.qml
+/root/RPGtown/WeaponShop.qml
+/root/RPGtown/Player.qml
+/root/RPGtown/PlayerData.qml
+/root/RPGtown/battleScene.qml
+--json
+/root/RPGtown/build/C_C_2025_06_17-Debug/appRPGtown_qmllint.json
