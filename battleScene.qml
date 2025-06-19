@@ -224,6 +224,17 @@ Item {
                playerInvincibleTimer.start()
            }
         }
+
+        if(monsterData.currentHealth <= 0){
+            monsterDisapear()
+        }
+    }
+
+
+    function monsterDisapear(){
+        monster.destroy()
+        monsterData.isMonsterDefeated = true
+        monster = null
     }
 
     Timer{

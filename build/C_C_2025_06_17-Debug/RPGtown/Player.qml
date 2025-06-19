@@ -312,7 +312,7 @@ Item {
         var item = playerData.bag.get(index)
         if(item.type === "buff" && item.buffType === "speed"){
             activeBuffs["wings"] = {
-                expiry: new Date().getTime() + item.duration
+
             };
             accelerateText.visible = true
             accelerate()

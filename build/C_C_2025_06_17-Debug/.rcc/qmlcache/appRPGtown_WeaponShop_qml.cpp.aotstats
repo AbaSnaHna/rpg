@@ -6,50 +6,66 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 30,
-                        "durationMicroseconds": 1308,
+                        "durationMicroseconds": 1498,
                         "errorMessage": "",
                         "functionName": "playerData",
                         "line": 12
                     },
                     {
+                        "codegenSuccessfull": true,
+                        "column": 31,
+                        "durationMicroseconds": 631,
+                        "errorMessage": "",
+                        "functionName": "monsterData",
+                        "line": 13
+                    },
+                    {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 124,
+                        "durationMicroseconds": 135,
                         "errorMessage": "Cannot access value for name mainWindow",
                         "functionName": "savePlayerState",
-                        "line": 50
+                        "line": 52
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 73,
+                        "durationMicroseconds": 74,
                         "errorMessage": "",
                         "functionName": "loadPlayerState",
-                        "line": 54
+                        "line": 56
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 29,
-                        "durationMicroseconds": 636,
+                        "durationMicroseconds": 722,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "dialogues",
-                        "line": 67
+                        "line": 69
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "Cannot load property length from (component in /root/RPGtown/WeaponShop.qml)::dialogues with type QVariant.",
+                        "functionName": "showRewardDialogue",
+                        "line": 181
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 5,
+                        "durationMicroseconds": 25,
                         "errorMessage": "Cannot load property length from (component in /root/RPGtown/WeaponShop.qml)::dialogues with type QVariant.",
                         "functionName": "updateDialogue",
-                        "line": 156
+                        "line": 188
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "openShop",
-                        "line": 435
+                        "line": 470
                     },
                     {
                         "codegenSuccessfull": true,
@@ -57,7 +73,7 @@
                         "durationMicroseconds": 53,
                         "errorMessage": "",
                         "functionName": "showDialogue",
-                        "line": 439
+                        "line": 474
                     },
                     {
                         "codegenSuccessfull": false,
@@ -65,12 +81,12 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "calculateDistance",
-                        "line": 443
+                        "line": 478
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 8
@@ -81,39 +97,39 @@
                         "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 19
+                        "line": 21
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 17,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "height",
-                        "line": 20
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 32,
-                        "durationMicroseconds": 38,
-                        "errorMessage": "",
-                        "functionName": "mapWidth",
                         "line": 22
                     },
                     {
                         "codegenSuccessfull": true,
+                        "column": 32,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "mapWidth",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "mapHeight",
-                        "line": 23
+                        "line": 25
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 34,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 17
+                        "line": 19
                     },
                     {
                         "codegenSuccessfull": false,
@@ -121,7 +137,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on onClicked.",
                         "functionName": "onClicked",
-                        "line": 39
+                        "line": 41
                     },
                     {
                         "codegenSuccessfull": false,
@@ -129,7 +145,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on bottom.",
                         "functionName": "bottom",
-                        "line": 38
+                        "line": 40
                     },
                     {
                         "codegenSuccessfull": false,
@@ -137,127 +153,143 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on right.",
                         "functionName": "right",
-                        "line": 38
+                        "line": 40
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 55,
                         "errorMessage": "",
                         "functionName": "loops",
-                        "line": 64
+                        "line": 66
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 99
+                        "line": 102
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 155,
-                        "errorMessage": "method updateDialogue cannot be resolved.",
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot access value for name monsterData",
                         "functionName": "onClicked",
-                        "line": 106
+                        "line": 109
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 38,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 105
+                        "line": 108
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 34,
+                        "durationMicroseconds": 35,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 112
+                        "line": 119
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 23,
-                        "durationMicroseconds": 19,
+                        "column": 27,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name dialogues",
                         "functionName": "text",
-                        "line": 117
+                        "line": 130
+                    },
+                    {
+                        "codegenSuccessfull": true,
+                        "column": 31,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "wrapMode",
+                        "line": 133
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 51,
-                        "errorMessage": "",
-                        "functionName": "wrapMode",
-                        "line": 120
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 23,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 53,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 121
+                        "line": 134
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 26,
-                        "durationMicroseconds": 19,
+                        "column": 30,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name dialogues",
                         "functionName": "visible",
-                        "line": 128
-                    },
-                    {
-                        "codegenSuccessfull": true,
-                        "column": 43,
-                        "durationMicroseconds": 76,
-                        "errorMessage": "",
-                        "functionName": "horizontalCenter",
-                        "line": 127
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
-                        "line": 132
-                    },
-                    {
-                        "codegenSuccessfull": false,
-                        "column": 32,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
-                        "functionName": "onClicked",
                         "line": 140
                     },
                     {
                         "codegenSuccessfull": false,
-                        "column": 32,
+                        "column": 36,
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on onClicked.",
                         "functionName": "onClicked",
-                        "line": 148
+                        "line": 144
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 36,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
+                        "functionName": "onClicked",
+                        "line": 152
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 34,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on visible.",
+                        "functionName": "visible",
+                        "line": 160
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 36,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
+                        "functionName": "onClicked",
+                        "line": 161
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 34,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on visible.",
+                        "functionName": "visible",
+                        "line": 168
+                    },
+                    {
+                        "codegenSuccessfull": false,
+                        "column": 36,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Cannot resolve property type  for binding on onClicked.",
+                        "functionName": "onClicked",
+                        "line": 169
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 9,
-                        "durationMicroseconds": 129,
+                        "durationMicroseconds": 143,
                         "errorMessage": "",
                         "functionName": "showBuyReminder",
-                        "line": 369
+                        "line": 403
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 9,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 105,
                         "errorMessage": "",
                         "functionName": "showReminder",
-                        "line": 374
+                        "line": 408
                     },
                     {
                         "codegenSuccessfull": false,
@@ -265,7 +297,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "buyItem",
-                        "line": 379
+                        "line": 413
                     },
                     {
                         "codegenSuccessfull": false,
@@ -273,39 +305,39 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "addToPlayerBag",
-                        "line": 404
+                        "line": 438
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 45,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 198
+                        "line": 232
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 20,
-                        "durationMicroseconds": 85,
+                        "durationMicroseconds": 77,
                         "errorMessage": "",
                         "functionName": "model",
-                        "line": 209
+                        "line": 243
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 39,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 203
+                        "line": 237
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 118,
+                        "durationMicroseconds": 132,
                         "errorMessage": "Cannot access value for name icon",
                         "functionName": "source",
-                        "line": 216
+                        "line": 250
                     },
                     {
                         "codegenSuccessfull": true,
@@ -313,63 +345,63 @@
                         "durationMicroseconds": 38,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 217
+                        "line": 251
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 33,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 91,
                         "errorMessage": "",
                         "functionName": "bottom",
-                        "line": 222
+                        "line": 256
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 43,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
-                        "line": 223
+                        "line": 257
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 30,
-                        "durationMicroseconds": 170,
+                        "durationMicroseconds": 149,
                         "errorMessage": "Cannot access value for name name",
                         "functionName": "text",
-                        "line": 228
+                        "line": 262
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 46,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 66,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
-                        "line": 231
+                        "line": 265
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 30,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 118,
                         "errorMessage": "Cannot access value for name cost",
                         "functionName": "text",
-                        "line": 234
+                        "line": 268
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 46,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
-                        "line": 237
+                        "line": 271
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 33,
-                        "durationMicroseconds": 157,
+                        "durationMicroseconds": 135,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "onClicked",
-                        "line": 244
+                        "line": 278
                     },
                     {
                         "codegenSuccessfull": false,
@@ -377,23 +409,23 @@
                         "durationMicroseconds": 14,
                         "errorMessage": "Cannot retrieve a non-object type by ID: toolTip",
                         "functionName": "onEntered",
-                        "line": 272
+                        "line": 306
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 10,
+                        "durationMicroseconds": 11,
                         "errorMessage": "Cannot retrieve a non-object type by ID: toolTip",
                         "functionName": "onExited",
-                        "line": 274
+                        "line": 308
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 40,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 241
+                        "line": 275
                     },
                     {
                         "codegenSuccessfull": false,
@@ -401,39 +433,39 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on text.",
                         "functionName": "text",
-                        "line": 254
+                        "line": 288
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 34,
-                        "durationMicroseconds": 12,
+                        "durationMicroseconds": 13,
                         "errorMessage": "Cannot retrieve a non-object type by ID: toolTip",
                         "functionName": "text",
-                        "line": 265
+                        "line": 299
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 50,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
-                        "line": 268
+                        "line": 302
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 39,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 36,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 285
+                        "line": 319
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 34,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "onTriggered",
-                        "line": 293
+                        "line": 327
                     },
                     {
                         "codegenSuccessfull": false,
@@ -441,7 +473,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on onClicked.",
                         "functionName": "onClicked",
-                        "line": 308
+                        "line": 342
                     },
                     {
                         "codegenSuccessfull": false,
@@ -449,7 +481,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on bottom.",
                         "functionName": "bottom",
-                        "line": 303
+                        "line": 337
                     },
                     {
                         "codegenSuccessfull": false,
@@ -457,7 +489,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on horizontalCenter.",
                         "functionName": "horizontalCenter",
-                        "line": 304
+                        "line": 338
                     },
                     {
                         "codegenSuccessfull": false,
@@ -465,7 +497,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Cannot resolve property type  for binding on onClicked.",
                         "functionName": "onClicked",
-                        "line": 313
+                        "line": 347
                     },
                     {
                         "codegenSuccessfull": true,
@@ -473,15 +505,15 @@
                         "durationMicroseconds": 46,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 321
+                        "line": 355
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 36,
-                        "durationMicroseconds": 39,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 330
+                        "line": 364
                     },
                     {
                         "codegenSuccessfull": true,
@@ -489,63 +521,63 @@
                         "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 340
+                        "line": 374
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 36,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 349
+                        "line": 383
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 135,
+                        "durationMicroseconds": 134,
                         "errorMessage": "Cannot access value for name trie",
                         "functionName": "bold",
-                        "line": 352
+                        "line": 386
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 26,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 76,
                         "errorMessage": "",
                         "functionName": "onTriggered",
-                        "line": 360
+                        "line": 394
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 26,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 96,
                         "errorMessage": "",
                         "functionName": "onTriggered",
-                        "line": 366
+                        "line": 400
                     },
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 84,
                         "errorMessage": "method calculateDistance cannot be resolved.",
                         "functionName": "onTriggered",
-                        "line": 429
+                        "line": 464
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 116,
+                        "durationMicroseconds": 122,
                         "errorMessage": "",
                         "functionName": "onCompleted",
-                        "line": 453
+                        "line": 488
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 30,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 64,
                         "errorMessage": "",
                         "functionName": "onDestruction",
-                        "line": 458
+                        "line": 493
                     }
                 ],
                 "filepath": "/root/RPGtown/WeaponShop.qml"

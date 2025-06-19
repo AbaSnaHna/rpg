@@ -16,7 +16,7 @@ QtObject {
 
     property int baseAttack: 20
     property int currentAttack:baseAttack
-    property int baseAttackDistance: 500
+    property int baseAttackDistance: 20
     property int currentAttackDistance: baseAttackDistance
 
     property ListModel bag: ListModel{

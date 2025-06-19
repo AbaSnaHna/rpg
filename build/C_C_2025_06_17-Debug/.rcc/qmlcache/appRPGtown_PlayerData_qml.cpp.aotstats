@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 34,
-                        "durationMicroseconds": 113,
+                        "durationMicroseconds": 82,
                         "errorMessage": "",
                         "functionName": "currentHealth",
                         "line": 11
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 32,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 34,
                         "errorMessage": "",
                         "functionName": "currentAttack",
                         "line": 18
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 41,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 30,
                         "errorMessage": "",
                         "functionName": "currentAttackDistance",
                         "line": 20

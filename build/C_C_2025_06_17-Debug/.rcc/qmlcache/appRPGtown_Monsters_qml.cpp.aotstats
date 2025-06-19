@@ -6,15 +6,15 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 25,
-                        "durationMicroseconds": 1240,
-                        "errorMessage": "Cannot load property monsters from MonsterData stored as QObject.",
+                        "durationMicroseconds": 857,
+                        "errorMessage": "Cannot load property monsters from const QMetaObject.",
                         "functionName": "onDirectionChanged",
                         "line": 53
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 17,
-                        "durationMicroseconds": 159,
+                        "durationMicroseconds": 120,
                         "errorMessage": "",
                         "functionName": "frameX",
                         "line": 27
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 17,
-                        "durationMicroseconds": 508,
+                        "durationMicroseconds": 358,
                         "errorMessage": "",
                         "functionName": "frameY",
                         "line": 31
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 18,
-                        "durationMicroseconds": 79,
+                        "durationMicroseconds": 55,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 40
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 41,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 19
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 19,
-                        "durationMicroseconds": 122,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "interval",
                         "line": 44
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 18,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "running",
                         "line": 46
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 20,
                         "errorMessage": "Cannot access value for name currentFrame",
                         "functionName": "onTriggered",
                         "line": 48

@@ -1,9 +1,0 @@
---resource
-D:/qt creator/RPGtown/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qt/rcc/qmake_RPGtown.qrc
---resource
-D:/qt creator/RPGtown/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qt/rcc/appRPGtown_raw_qml_0.qrc
-/qt/qml/RPGtown/Main.qml
-/qt/qml/RPGtown/TownScreen.qml
-/qt/qml/RPGtown/WeaponShop.qml
-/qt/qml/RPGtown/Player.qml
-/qt/qml/RPGtown/PlayerData.qml

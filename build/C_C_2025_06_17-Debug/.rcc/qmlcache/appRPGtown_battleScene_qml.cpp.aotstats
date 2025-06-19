@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 30,
-                        "durationMicroseconds": 1817,
+                        "durationMicroseconds": 1395,
                         "errorMessage": "",
                         "functionName": "playerData",
                         "line": 9
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 31,
-                        "durationMicroseconds": 866,
+                        "durationMicroseconds": 576,
                         "errorMessage": "",
                         "functionName": "monsterData",
                         "line": 10
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 5,
-                        "durationMicroseconds": 3125,
+                        "durationMicroseconds": 2200,
                         "errorMessage": "",
                         "functionName": "moveTowardPlayer",
                         "line": 105
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 35,
-                        "durationMicroseconds": 514,
+                        "durationMicroseconds": 311,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "transitionAreas",
                         "line": 147
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 182,
+                        "durationMicroseconds": 106,
                         "errorMessage": "Cannot load property length from (component in /root/RPGtown/battleScene.qml)::transitionAreas with type QVariant.",
                         "functionName": "checkAreaTransition",
                         "line": 165
@@ -46,15 +46,23 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 5,
-                        "durationMicroseconds": 49,
+                        "durationMicroseconds": 34,
                         "errorMessage": "Cannot load property currentAttackDistance from (component in /root/RPGtown/battleScene.qml)::playerData with type QVariant.",
                         "functionName": "monsterDamage",
                         "line": 193
                     },
                     {
+                        "codegenSuccessfull": false,
+                        "column": 5,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "Type (component in /root/RPGtown/battleScene.qml)::monsterData with type QVariant does not have a property isMonsterDefeated for writing",
+                        "functionName": "monsterDisapear",
+                        "line": 234
+                    },
+                    {
                         "codegenSuccessfull": true,
                         "column": 19,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 43,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 6
@@ -62,7 +70,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 124,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 16
@@ -70,7 +78,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 17,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 17
@@ -78,7 +86,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 27,
-                        "durationMicroseconds": 54,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 15
@@ -86,7 +94,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 45,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot access value for name playerData",
                         "functionName": "width",
                         "line": 36
@@ -94,7 +102,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 25,
-                        "durationMicroseconds": 114,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 37
@@ -102,7 +110,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 25,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 39,
                         "errorMessage": "Cannot load property radius from (component in /root/RPGtown/battleScene.qml)::parent with type QQuickItem.",
                         "functionName": "radius",
                         "line": 38
@@ -110,7 +118,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 28,
                         "errorMessage": "Cannot access value for name playerData",
                         "functionName": "text",
                         "line": 48
@@ -118,7 +126,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 27,
+                        "durationMicroseconds": 18,
                         "errorMessage": "Cannot access value for name playerData",
                         "functionName": "color",
                         "line": 49
@@ -126,7 +134,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 75,
+                        "durationMicroseconds": 53,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 47
@@ -134,7 +142,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 16,
-                        "durationMicroseconds": 64,
+                        "durationMicroseconds": 42,
                         "errorMessage": "",
                         "functionName": "player",
                         "line": 65
@@ -142,7 +150,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 221,
+                        "durationMicroseconds": 159,
                         "errorMessage": "",
                         "functionName": "x",
                         "line": 66
@@ -150,7 +158,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 12,
-                        "durationMicroseconds": 207,
+                        "durationMicroseconds": 143,
                         "errorMessage": "",
                         "functionName": "y",
                         "line": 67
@@ -158,7 +166,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 41,
+                        "durationMicroseconds": 31,
                         "errorMessage": "Cannot access value for name monsterData",
                         "functionName": "width",
                         "line": 77
@@ -166,7 +174,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 25,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 78
@@ -174,7 +182,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 25,
-                        "durationMicroseconds": 50,
+                        "durationMicroseconds": 35,
                         "errorMessage": "Cannot load property radius from (component in /root/RPGtown/battleScene.qml)::parent with type QQuickItem.",
                         "functionName": "radius",
                         "line": 79
@@ -182,7 +190,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 30,
+                        "durationMicroseconds": 22,
                         "errorMessage": "Cannot access value for name monsterData",
                         "functionName": "text",
                         "line": 89
@@ -190,7 +198,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 24,
-                        "durationMicroseconds": 25,
+                        "durationMicroseconds": 17,
                         "errorMessage": "Cannot access value for name monsterData",
                         "functionName": "color",
                         "line": 90
@@ -198,7 +206,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 35,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 40,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 88
@@ -206,7 +214,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 68,
+                        "durationMicroseconds": 48,
                         "errorMessage": "method moveTowardPlayer cannot be resolved.",
                         "functionName": "onTriggered",
                         "line": 144
@@ -214,7 +222,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 71,
+                        "durationMicroseconds": 43,
                         "errorMessage": "method checkAreaTransition cannot be resolved.",
                         "functionName": "onTriggered",
                         "line": 162
@@ -222,34 +230,34 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 35,
                         "errorMessage": "method monsterDamage cannot be resolved.",
                         "functionName": "onTriggered",
-                        "line": 233
+                        "line": 244
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 129,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "onTriggered",
-                        "line": 241
+                        "line": 252
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 22,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 72,
                         "errorMessage": "",
                         "functionName": "onTriggered",
-                        "line": 249
+                        "line": 260
                     },
                     {
                         "codegenSuccessfull": true,
                         "column": 28,
-                        "durationMicroseconds": 99,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "onCompleted",
-                        "line": 254
+                        "line": 265
                     }
                 ],
                 "filepath": "/root/RPGtown/battleScene.qml"

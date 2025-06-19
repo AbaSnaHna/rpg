@@ -10,4 +10,5 @@ QtObject {
     property real currentHealth: health
 
     property int baseAttack: 20
+    property bool isMonsterDefeated: false
 }

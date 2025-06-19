@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 34,
-                        "durationMicroseconds": 111,
+                        "durationMicroseconds": 83,
                         "errorMessage": "",
                         "functionName": "currentHealth",
                         "line": 10

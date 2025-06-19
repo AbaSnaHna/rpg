@@ -10,6 +10,8 @@ Item {
     property int selectedItem: -1
 
     property var playerData: PlayerData
+    property var monsterData: MonsterData
+
     // 背景
     Image {
         id:map
@@ -71,7 +73,8 @@ Item {
         {text:"是小镇南边的魔物问题\n不知道为什么，最近魔物们很活跃" , islast:false},
         {text:"你愿意帮我们个忙吗\n就解决一部分就好，一部分", islast:false},
         {text:"当然，赏金肯定是少不了的", islast:false},
-        {text:"还是你只是来买东西的", islast:true}
+        {text:"还是你只是来买东西的", islast:true},
+        {text:"听说你击败了那些魔物\n这是你的赏金1000金币!", islast:true}
     ]
 
     property int currentDialogueIndex: 0
@@ -89,13 +92,13 @@ Item {
             y:400
         }
 
-}
+    }
 
     Rectangle{
         id:dialogueBox
         visible: false
-        width: 300
-        height: 123
+        width: 500
+        height: 144
         anchors.centerIn: parent
         color:"#AA333333"
         radius: 10
@@ -104,53 +107,82 @@ Item {
         MouseArea{
             anchors.fill: parent
             onClicked: {
-                updateDialogue();
+                if(monsterData.isMonsterDefeated){
+                    showRewardDialogue();
+                }else{
+                    updateDialogue();
+                }
             }
         }
 
-        Column{
+        Row{
             anchors.fill: parent
-            padding: 10
-
-            Text {
-                id:dialogueText
-                text: dialogues[currentDialogueIndex].text
-                color: "white"
-                font.pixelSize: 16
-                wrapMode: Text.WordWrap
-                width:parent.width
+            Image {
+                id:bigAvatar
+                source: "qrc:/Chara/NPC/org.png"
             }
 
-            Row{
-                id:buttonRow
-                spacing: 10
-                anchors.horizontalCenter: parent.horizontalCenter
-                visible: dialogues[currentDialogueIndex].islast
+            Column{
+                padding: 10
 
-                Button{
-                    text:"购买物品"
-                    onClicked: {
-                        openShop();
-                        dialogueBox.visible = false
-                    }
+                Text {
+                    id:dialogueText
+                    text: dialogues[currentDialogueIndex].text
+                    color: "white"
+                    font.pixelSize: 16
+                    wrapMode: Text.WordWrap
+                    width:parent.width
                 }
 
-                Button{
-                    text: "离开"
-                    onClicked: {
-                        dialogueBox.visible = false
-                        player.forceActiveFocus()
-                    }
-                }
+                Row{
+                    id:buttonRow
+                    spacing: 10
+                    visible: dialogues[currentDialogueIndex].islast
 
-                Button{
-                    text:"接受委托"
-                    onClicked: {
-                        mainWindow.changeScene("battleScene.qml", {x:100, y:100})
+                    Button{
+                        text:"购买物品"
+                        onClicked: {
+                            openShop();
+                            dialogueBox.visible = false
+                        }
+                    }
+
+                    Button{
+                        text: "离开"
+                        onClicked: {
+                            dialogueBox.visible = false
+                            player.forceActiveFocus()
+                        }
+                    }
+
+                    Button{
+                        text:"接受委托"
+                        visible: !monsterData.isMonsterDefeated && monsterData.currentHealth >= 0
+                        onClicked: {
+                            mainWindow.changeScene("battleScene.qml", {x:100, y:100})
+                        }
+                    }
+
+                    Button{
+                        text: "领取赏金"
+                        visible: monsterData.isMonsterDefeated
+                        onClicked: {
+                            playerData.money += 1000
+                            dialogueBox.visible = false
+                            monsterData.isMonsterDefeated = false
+                            player.forceActiveFocus()
+                        }
                     }
                 }
             }
         }
+    }
+
+    function showRewardDialogue(){
+        currentDialogueIndex = dialogues.length - 1;
+        dialogueText.text = dialogues[currentDialogueIndex].text;
+        buttonRow.visible = dialogues[currentDialogueIndex].islast;
+        dialogueBox.visible = true;
     }
 
     function updateDialogue(){
@@ -162,6 +194,7 @@ Item {
             dialogueBox.visible = false
             currentDialogueIndex = 0
         }
+
     }
 
     property ListModel goods: ListModel{
@@ -174,6 +207,7 @@ Item {
             stock:20
             type:"buff"
             buffType:"speed"
+            duration:1000
             value:2
         }
 
@@ -287,7 +321,7 @@ Item {
 
                 Timer{
                     id:highlightTimer
-                    interval: 1000
+                    interval: 2000
                     running: true
                     repeat: true
                     onTriggered: highlight.visible = false
@@ -415,7 +449,8 @@ Item {
                                   icon:item.icon,
                                   count:1,
                                   type:item.type,
-                                  buffType:item.buffType
+                                  buffType:item.buffType,
+                                  duration:item.duration
                               })
         }
     }

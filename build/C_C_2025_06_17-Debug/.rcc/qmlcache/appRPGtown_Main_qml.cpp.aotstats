@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 31,
-                        "durationMicroseconds": 194,
+                        "durationMicroseconds": 200,
                         "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
                         "functionName": "playerState",
                         "line": 24
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 47,
+                        "durationMicroseconds": 54,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 34
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 18,
-                        "durationMicroseconds": 78,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "visible",
                         "line": 44
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessfull": true,
                         "column": 23,
-                        "durationMicroseconds": 35,
+                        "durationMicroseconds": 37,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 40
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 22,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 77,
                         "errorMessage": "Cannot load property loadPlayerState from QQuickLoader::item with type QObject.",
                         "functionName": "onTriggered",
                         "line": 66
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessfull": false,
                         "column": 28,
-                        "durationMicroseconds": 155,
+                        "durationMicroseconds": 166,
                         "errorMessage": "Cannot access value for name applicationWindow",
                         "functionName": "onCompleted",
                         "line": 76
