@@ -1,6 +1,6 @@
 pragma Singleton
-import QtQuick 2.0
-import RPGtown 1.0
+import QtQuick
+import RPGtown
 
 QtObject {
     id: playerData
@@ -45,7 +45,7 @@ QtObject {
             itemId:"potion"
             icon:"qrc:/weapons/potion.png"
             name:"生命药水"
-            count:0
+            count:1
             type:"buff"
             buffType:"healing"
             value:2

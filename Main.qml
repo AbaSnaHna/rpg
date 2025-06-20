@@ -11,15 +11,6 @@ Window {
     title: "Allinal"
     color: "#1a1a1a"
 
-
-
-    Component{
-        id:townScreenComonpent
-        TownScreen{
-
-        }
-    }
-
     // 玩家全局状态
     property var playerState: ({
         x: 1290,
@@ -32,7 +23,7 @@ Window {
     Loader {
         id: sceneLoader
         anchors.fill: parent
-        source: "WeaponShop.qml"
+        source: "TownScreen.qml"
     }
 
     Rectangle {
@@ -56,7 +47,6 @@ Window {
         sceneTransition.start()
     }
 
-    // 场景过渡计时器
     Timer {
         id: sceneTransition
         property string scenePath
@@ -72,12 +62,6 @@ Window {
         }
     }
 
-
     Component.onCompleted: {
-        Qt.createQmlObject('import QtQuick 2.0; PlayerData {}',
-                          applicationWindow,
-                          "PlayerDataSingleton")
     }
-
-
 }

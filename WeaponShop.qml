@@ -34,14 +34,64 @@ Item {
         y:760
     }
 
-    // 返回按钮
+    Rectangle{
+        id:hintBox
+        anchors.horizontalCenter: parent.horizontalCenter
+        y:parent.height * 0.25
+        width: sceneName.width + 40
+        height: sceneName.height + 20
+        radius: 10
+        color:"#AAFFA500"
+        border.color: "white"
+        border.width: 2
+        opacity: 0
+        scale: 0.8
+
+        Text {
+            id: sceneName
+            anchors.centerIn: parent
+            text: "利兹武器店"
+            color:"white"
+            font{
+                family: "Hiragino Sans GB"
+                pixelSize: 100
+                bold: true
+                italic: true
+            }
+        }
+
+        ParallelAnimation{
+            id:enterAnim
+            running: true
+            NumberAnimation{target:hintBox; property: "opacity"; to:1; duration: 800}
+            NumberAnimation{target:hintBox; property: "scale"; to:1; duration: 800;
+                easing.type: Easing.OutBack}
+        }
+
+        Timer{
+            interval: 2500
+            running: true
+            onTriggered: exitAnim.start()
+        }
+
+        ParallelAnimation{
+            id:exitAnim
+            running: true
+            NumberAnimation{target:hintBox; property: "opacity"; to:0; duration: 800}
+            NumberAnimation{target:hintBox; property: "scale"; to:0.8; duration: 800;
+                easing.type: Easing.OutBack}
+        }
+    }
+
     Button {
         text: "离开商店"
         anchors { bottom: parent.bottom; right: parent.right; margins: 100 }
         onClicked: {
+            leaveShopPlayer.stop()
+            leaveShopPlayer.play()
             mainWindow.changeScene("TownScreen.qml", {x: 1053, y: 600})
 }
-        background: Rectangle {
+        Rectangle {
             color: "#8B4513"
             radius: 5
             border.color: "#5D2906"
@@ -59,7 +109,7 @@ Item {
 
     MediaPlayer{
         id:backgroudPlayer
-        source: "qrc:/BGM/At Nightfall.mp3"
+        source: "qrc:/BGM/Everyday Life.mp3"
         audioOutput: AudioOutput{
             volume: 0.8
         }
@@ -67,14 +117,15 @@ Item {
     }
 
     property var dialogues: [
-        {text:"欢迎来到利兹武器店！\n我是老板利兹\n想看看什么商品吗？", islast:false},
-        {text:"这是我们的最新商品！\n您需要什么类型的武器？", islast:false},
-        {text:"你看来很强啊！\n其实我这里有个工会的委托", islast:false},
-        {text:"是小镇南边的魔物问题\n不知道为什么，最近魔物们很活跃" , islast:false},
-        {text:"你愿意帮我们个忙吗\n就解决一部分就好，一部分", islast:false},
-        {text:"当然，赏金肯定是少不了的", islast:false},
-        {text:"还是你只是来买东西的", islast:true},
-        {text:"听说你击败了那些魔物\n这是你的赏金1000金币!", islast:true}
+        {text:"欢迎来到利兹武器店！\n\n我是老板利兹\n\n想看看什么商品吗？", islast:false},
+        {text:"这是我们的最新商品！\n\n您需要什么类型的武器？", islast:monsterData.isMonsterDefeated},
+        {text:"你看来很强啊！\n\n其实我这里有个工会的委托", islast:monsterData.isMonsterDefeated},
+        {text:"是小镇南边的魔物问题\n\n不知道为什么，最近魔物们很活跃" , islast:monsterData.isMonsterDefeated},
+        {text:"你愿意帮我们个忙吗\n\n就解决一部分就好，一部分", islast:monsterData.isMonsterDefeated},
+        {text:"当然，赏金肯定是少不了的", islast:monsterData.isMonsterDefeated},
+        {text:"还是你只是来买东西的", islast:false},
+        {text:"",islast:true},
+        {text:"听说你击败了那些魔物\n\n这是你的赏金1000金币!", islast:monsterData.isMonsterDefeated}
     ]
 
     property int currentDialogueIndex: 0
@@ -91,7 +142,6 @@ Item {
             x:805
             y:400
         }
-
     }
 
     Rectangle{
@@ -131,7 +181,6 @@ Item {
                     color: "white"
                     font.pixelSize: 16
                     wrapMode: Text.WordWrap
-                    width:parent.width
                 }
 
                 Row{
@@ -144,6 +193,8 @@ Item {
                         onClicked: {
                             openShop();
                             dialogueBox.visible = false
+                            leaveShopPlayer.stop()
+                            leaveShopPlayer.play()
                         }
                     }
 
@@ -151,6 +202,8 @@ Item {
                         text: "离开"
                         onClicked: {
                             dialogueBox.visible = false
+                            leaveShopPlayer.stop()
+                            leaveShopPlayer.play()
                             player.forceActiveFocus()
                         }
                     }
@@ -160,6 +213,8 @@ Item {
                         visible: !monsterData.isMonsterDefeated && monsterData.currentHealth >= 0
                         onClicked: {
                             mainWindow.changeScene("battleScene.qml", {x:100, y:100})
+                            acceptPlayer.stop()
+                            acceptPlayer.play()
                         }
                     }
 
@@ -170,6 +225,9 @@ Item {
                             playerData.money += 1000
                             dialogueBox.visible = false
                             monsterData.isMonsterDefeated = false
+                            currentDialogueIndex = 0
+                            leaveShopPlayer.stop()
+                            leaveShopPlayer.play()
                             player.forceActiveFocus()
                         }
                     }
@@ -178,14 +236,29 @@ Item {
         }
     }
 
+    MediaPlayer{
+        id:acceptPlayer
+        source: "qrc:/BGM/accept.wav"
+        audioOutput: AudioOutput{
+            volume: 0.5
+        }
+
+        loops: 1
+    }
+
     function showRewardDialogue(){
-        currentDialogueIndex = dialogues.length - 1;
-        dialogueText.text = dialogues[currentDialogueIndex].text;
-        buttonRow.visible = dialogues[currentDialogueIndex].islast;
-        dialogueBox.visible = true;
+        updateDialogue()
     }
 
     function updateDialogue(){
+        if (monsterData.isMonsterDefeated) {
+            currentDialogueIndex = dialogues.length - 1;
+            dialogueText.text = dialogues[currentDialogueIndex].text;
+            buttonRow.visible = dialogues[currentDialogueIndex].islast;
+            dialogueBox.visible = true;
+            return;
+        }
+
         currentDialogueIndex++
         if(currentDialogueIndex < dialogues.length){
             dialogueText.text = dialogues[currentDialogueIndex].text
@@ -329,7 +402,6 @@ Item {
             }
         }
 
-
         Button{
             id:buyButton
             text:"购买"
@@ -339,7 +411,9 @@ Item {
                 margins: 20
             }
             enabled: false
-            onClicked: shopWindow.buyItem(selectedItem, playerData)
+            onClicked: {
+                shopWindow.buyItem(selectedItem, playerData)
+            }
         }
 
         Button{
@@ -347,7 +421,19 @@ Item {
             onClicked: {
                 shopWindow.visible = false
                 player.forceActiveFocus()
+                leaveShopPlayer.stop()
+                leaveShopPlayer.play()
             }
+        }
+
+        MediaPlayer{
+            id:leaveShopPlayer
+            source: "qrc:/BGM/Computer.wav"
+            audioOutput: AudioOutput{
+                volume: 0.5
+            }
+
+            loops: 1
         }
 
         Rectangle{
@@ -383,7 +469,7 @@ Item {
                 anchors.centerIn: parent
                 text:"购买成功!"
                 color: "white"
-                font.bold: trie
+                font.bold: true
                 font.pixelSize: 16
             }
         }
@@ -410,6 +496,24 @@ Item {
             reminderTimer.start()
         }
 
+        MediaPlayer{
+            id:buyButtonPlayer
+            source: "qrc:/BGM/Coin.wav"
+            audioOutput: AudioOutput{
+                volume: 0.5
+            }
+            loops:1
+        }
+
+        MediaPlayer{
+            id:buyReminderPlayer
+            source: "qrc:/BGM/warn.wav"
+            audioOutput: AudioOutput{
+                volume: 0.5
+            }
+            loops: 1
+        }
+
         function buyItem(itemIndex, playerData){
             var item = goods.get(itemIndex)
 
@@ -419,7 +523,8 @@ Item {
             }
             if(playerData.money < item.cost){
                 showReminder();
-                console.log("金币不足")
+                buyReminderPlayer.stop()
+                buyReminderPlayer.play()
                 return false
             }
 
@@ -428,11 +533,12 @@ Item {
 
             if(playerData.money -= item.cost){
                 showBuyReminder()
+                buyButtonPlayer.stop()
+                buyButtonPlayer.play()
             }
 
             addToPlayerBag(playerData, item)
             return true
-
         }
 
         function addToPlayerBag(playerData, item){
@@ -465,7 +571,6 @@ Item {
             isPlayerNearBy = calculateDistance(player, keeper) < 100
         }
     }
-
 
     function openShop(){
         shopWindow.visible = true

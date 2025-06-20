@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtMultimedia
 
 Item {
     id: battleMap
@@ -60,11 +61,12 @@ Item {
         }
     }
 
-    Monsters {
+    Monsters{
         id:monster
         player:player
         x: Math.random() * (parent.width - width)
         y: Math.random() * (parent.height - height)
+
         Rectangle {
             id:monsterHealthBar
             z:1
@@ -102,17 +104,63 @@ Item {
 
     }
 
+    Rectangle{
+        id:hintBox
+        anchors.horizontalCenter: parent.horizontalCenter
+        y:parent.height * 0.25
+        width: sceneName.width + 40
+        height: sceneName.height + 20
+        radius: 10
+        color:"#AAFFA500"
+        border.color: "white"
+        border.width: 2
+        opacity: 0
+        scale: 0.8
+
+        Text {
+            id: sceneName
+            anchors.centerIn: parent
+            text: "虎溪"
+            color:"white"
+            font{
+                family: "Hiragino Sans GB"
+                pixelSize: 100
+                bold: true
+                italic: true
+            }
+        }
+
+        ParallelAnimation{
+            id:enterAnim
+            running: true
+            NumberAnimation{target:hintBox; property: "opacity"; to:1; duration: 800}
+            NumberAnimation{target:hintBox; property: "scale"; to:1; duration: 800;
+                easing.type: Easing.OutBack}
+        }
+
+        Timer{
+            interval: 2500
+            running: true
+            onTriggered: exitAnim.start()
+        }
+
+        ParallelAnimation{
+            id:exitAnim
+            running: true
+            NumberAnimation{target:hintBox; property: "opacity"; to:0; duration: 800}
+            NumberAnimation{target:hintBox; property: "scale"; to:0.8; duration: 800;
+                easing.type: Easing.OutBack}
+        }
+    }
+
     function moveTowardPlayer() {
         if (player && monster) {
-            // 计算玩家中心点
             var playerCenterX = player.x + player.width / 2
             var playerCenterY = player.y + player.height / 2
 
-            // 计算怪物中心点
             var monsterCenterX = monster.x + monster.width / 2
             var monsterCenterY = monster.y + monster.height / 2
 
-            // 计算方向向量
             var dx = playerCenterX - monsterCenterX
             var dy = playerCenterY - monsterCenterY
             var distance = Math.sqrt(dx * dx + dy * dy)
@@ -150,11 +198,10 @@ Item {
             x: 200,  y: 500,
             width: 100, height: 100,
             targetScene: "TownScreen.qml",
-            playerSpawn: { x: 850, y: 970 }
+            playerSpawn: { x: 870, y: 960 }
         }
     ]
 
-    // 区域检测定时器
     Timer {
         interval: 100
         running: true
@@ -165,7 +212,6 @@ Item {
     function checkAreaTransition() {
         if(!player.moving) return
 
-        // 获取玩家矩形区域
         var playerLeft = player.x
         var playerRight = player.x + player.width
         var playerTop = player.y
@@ -191,7 +237,6 @@ Item {
 
 
     function monsterDamage(){
-
         var playerLeft = player.x - playerData.currentAttackDistance
         var playerRight = player.x + player.width + playerData.currentAttackDistance
         var playerTop = player.y
@@ -206,6 +251,8 @@ Item {
                 playerLeft < monsterRight &&
                 playerBottom > monsterTop &&
                 playerTop < monsterBottom){
+            attackPlayer.stop()
+            attackPlayer.play()
 
             if(!monster.isInvincible){
                 monsterData.currentHealth -= playerData.currentAttack
@@ -227,6 +274,8 @@ Item {
 
         if(monsterData.currentHealth <= 0){
             monsterDisapear()
+            backgroundPlayer.stop()
+            backgroundPlayer2.play()
         }
     }
 
@@ -234,7 +283,6 @@ Item {
     function monsterDisapear(){
         monster.destroy()
         monsterData.isMonsterDefeated = true
-        monster = null
     }
 
     Timer{
@@ -262,7 +310,40 @@ Item {
         }
     }
 
+    MediaPlayer{
+        id:attackPlayer
+        source: "qrc:/BGM/Attack2.wav"
+        audioOutput: AudioOutput {
+            volume: 0.8
+        }
+        loops:1
+    }
+
+    MediaPlayer{
+        id:backgroundPlayer
+        source: "qrc:/BGM/light your sword.mp3"
+        audioOutput: AudioOutput{
+            volume: 0.5
+        }
+        loops:MediaPlayer.Infinite
+    }
+
+    MediaPlayer{
+        id:backgroundPlayer2
+        source: "qrc:/BGM/At Nightfall.mp3"
+        audioOutput: AudioOutput{
+            volume: 0.5
+        }
+        loops:MediaPlayer.Infinite
+    }
+
     Component.onCompleted: {
+        backgroundPlayer.play()
+
         player.forceActiveFocus()
+    }
+
+    Component.onDestruction: {
+        backgroundPlayer2.stop()
     }
 }

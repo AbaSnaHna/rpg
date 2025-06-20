@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtMultimedia
 
 Item {
     id: player
@@ -240,6 +241,8 @@ Item {
                     anchors.fill: parent
                     onClicked: {
                         player.useItem(index)
+                        useitemSound.stop()
+                        useitemSound.play()
                     }
                 }
             }
@@ -306,6 +309,14 @@ Item {
         font.pixelSize: 16
         font.bold: true
         visible: false
+    }
+
+    MediaPlayer {
+        id: useitemSound
+        source: "qrc:/BGM/Absorb2.wav"
+        audioOutput: AudioOutput {
+        }
+        loops:1
     }
 
     function useItem(index){
@@ -455,9 +466,6 @@ Item {
         event.accepted = true
     }
 
-
-
-    // 碰撞检测
     function canMove(x, y) {
 
         var bounds = parent.parent || parent

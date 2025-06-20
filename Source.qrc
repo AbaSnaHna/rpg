@@ -16,5 +16,16 @@
         <file>sprites/player_spritesheet1.png</file>
         <file>monsters/monster2.png</file>
         <file>sprites/battle.png</file>
+        <file>BGM/Absorb2.wav</file>
+        <file>BGM/Attack2.wav</file>
+        <file>BGM/light your sword.mp3</file>
+        <file>Chara/face.png</file>
+        <file>BGM/Everyday Life.mp3</file>
+        <file>BGM/Coin.wav</file>
+        <file>BGM/warn.wav</file>
+        <file>BGM/Computer.wav</file>
+        <file>BGM/accept.wav</file>
+        <file>monsters/death.png</file>
+        <file>qmldir</file>
     </qresource>
 </RCC>

@@ -22,7 +22,55 @@ Item {
         id:player
     }
 
-    // 状态保存/加载
+    Rectangle{
+        id:hintBox
+        anchors.horizontalCenter: parent.horizontalCenter
+        y:parent.height * 0.25
+        width: sceneName.width + 40
+        height: sceneName.height + 20
+        radius: 10
+        color:"#AA4ECDC4"
+        border.color: "white"
+        border.width: 2
+        opacity: 0
+        scale: 0.8
+
+        Text {
+            id: sceneName
+            anchors.centerIn: parent
+            text: "沙坪坝"
+            color:"white"
+            font{
+                family: "Hiragino Sans GB"
+                pixelSize: 100
+                bold: true
+                italic: true
+            }
+        }
+
+        ParallelAnimation{
+            id:enterAnim
+            running: true
+            NumberAnimation{target:hintBox; property: "opacity"; to:1; duration: 800}
+            NumberAnimation{target:hintBox; property: "scale"; to:1; duration: 800;
+                easing.type: Easing.OutBack}
+        }
+
+        Timer{
+            interval: 2500
+            running: true
+            onTriggered: exitAnim.start()
+        }
+
+        ParallelAnimation{
+            id:exitAnim
+            running: true
+            NumberAnimation{target:hintBox; property: "opacity"; to:0; duration: 800}
+            NumberAnimation{target:hintBox; property: "scale"; to:0.8; duration: 800;
+                easing.type: Easing.OutBack}
+        }
+    }
+
     function savePlayerState() {
         mainWindow.playerState = {
             x: player.x + map.x,
@@ -53,7 +101,6 @@ Item {
         }
     ]
 
-    // 区域检测定时器
     Timer {
         interval: 100
         running: true
@@ -64,7 +111,6 @@ Item {
     function checkAreaTransition() {
         if(!player.moving) return
 
-        // 获取玩家矩形区域
         var playerLeft = player.x
         var playerRight = player.x + player.width
         var playerTop = player.y
@@ -87,7 +133,6 @@ Item {
             }
         }
     }
-
 
     MediaPlayer{
         id:backgroudPlayer

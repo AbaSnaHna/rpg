@@ -1,6 +1,6 @@
 pragma Singleton
 import QtQuick
-import RPGtown 1.0
+import RPGtown
 
 QtObject {
     id:monstersData
