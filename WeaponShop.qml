@@ -186,6 +186,62 @@ Item {
             buffType:"healing"
             value:2
         }
+
+        ListElement{
+            itemId:"gun"
+            icon:"qrc:/weapons/gun.png"
+            name:"手枪"
+            cost:80
+            stock:50
+            type:"weapon"
+            attack:20
+            range:200  //攻击范围
+        }
+
+        ListElement{
+            itemId:"bow"
+            icon:"qrc:/weapons/bow.png"
+            name:"短弓"
+            cost:55
+            type:"weapon"
+            stock:50
+            attack:10
+            range:120
+        }
+
+        ListElement {
+            itemId:"spear"
+            icon:"qrc:/weapons/spear.png"
+            name:"短矛"
+            cost:50
+            stock:50
+            type:"weapon"
+            attack:10
+            range:80
+        }
+
+        ListElement {
+            itemId:"claw"
+            icon:"qrc:/weapons/claw.png"
+            name:"铁爪"
+            cost:40
+            stock:50
+            type:"weapon"
+            attack:10
+            range:10
+        }
+
+        ListElement {
+            itemId:"axe"
+            icon:"qrc:/weapons/axe.png"
+            name:"斧头"
+            cost:50
+            stock:50
+            type:"weapon"
+            attack:10
+            range:20
+        }
+
     }
 
     Rectangle{
@@ -325,17 +381,24 @@ Item {
                 }
             }
 
-            playerData.bag.append({
-                                  itemId:item.itemId,
-                                  name:item.name,
-                                  icon:item.icon,
-                                  count:1,
-                                  type:item.type,
-                                  buffType:item.buffType
-                              })
+            var newItem = {
+                itemId: item.itemId,
+                name: item.name,
+                icon: item.icon,
+                count: 1,
+                type: item.type
+            }
+
+            if(item.type === "weapon"){
+                if(item.attack) newItem.attack = item.attack
+                if(item.range) newItem.range = item.range
+            }else{
+                newItem.buffType = item.buffType
+                newItem.value = item.value
+            }
+            playerData.bag.append(newItem)
         }
     }
-
     property bool isPlayerNearBy: false
 
     Timer{

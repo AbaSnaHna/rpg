@@ -6,6 +6,11 @@ Item {
     anchors.fill: parent
     focus: true
 
+    property int monsterHealth: 50
+    property int monsterMaxHealth: 50
+    property bool playerAttacking: false
+    property bool monsterAttacking: false
+
     Image {
         id: battleImage
         source: "qrc:/map/battlemap.png"
@@ -26,6 +31,58 @@ Item {
         player:player
         x: Math.random() * (parent.width - width)
         y: Math.random() * (parent.height - height)
+    }
+
+    // 玩家血条
+    Rectangle {
+        width: 100
+        height: 10
+        x: player.x
+        y: player.y - 15
+        color: "red"
+        Rectangle {
+            width: parent.width * (playerData.currentHealth / playerData.maxHealth)
+            height: parent.height
+            color: "green"
+        }
+    }
+
+    // 怪物血条
+    Rectangle {
+        width: 100
+        height: 10
+        x: monster.x
+        y: monster.y - 15
+        color: "red"
+        Rectangle {
+            width: parent.width * (monsterHealth / monsterMaxHealth)
+            height: parent.height
+            color: "yellow"
+        }
+    }
+
+    // 伤害
+    Text {
+        id: damageText
+        color: "red"
+        font.pixelSize: 24
+        font.bold: true
+        visible: false
+    }
+
+    function showDamage(x, y, amount, isPlayer) {
+        damageText.text = amount
+        damageText.x = x
+        damageText.y = y
+        damageText.color = isPlayer ? "red" : "white"
+        damageText.visible = true
+        damageTimer.start()
+    }
+
+    Timer {
+        id: damageTimer
+        interval: 500
+        onTriggered: damageText.visible = false
     }
 
     function moveTowardPlayer() {

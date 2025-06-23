@@ -19,5 +19,14 @@
         <file>monsters/monsters2.png</file>
         <file>monsters/monsters.png</file>
         <file>sprites/battle.png</file>
+        <file>weapons/spear.png</file>
+        <file>weapons/gun.png</file>
+        <file>weapons/claw.png</file>
+        <file>weapons/bow.png</file>
+        <file>weapons/axe.png</file>
+
+
+
+
     </qresource>
 </RCC>
